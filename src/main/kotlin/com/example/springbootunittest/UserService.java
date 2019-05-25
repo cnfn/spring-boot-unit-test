@@ -17,4 +17,10 @@ public class UserService {
         user.setName(nameService.getName(id));
         return user;
     }
+
+    public User getUser(String name) {
+        User user = new User();
+        user.setName(name);
+        return user;
+    }
 }
