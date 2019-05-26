@@ -1,5 +1,6 @@
 package com.example.springbootunittest;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,16 @@ public class UserService {
         User user = new User();
         user.setName(name);
         return user;
+    }
+
+    public User generateUser() {
+        User user = new User();
+        user.setName(generateRandomName());
+
+        return user;
+    }
+
+    private String generateRandomName() {
+        return RandomStringUtils.randomAlphabetic(5);
     }
 }
